@@ -69,7 +69,12 @@ def print_info(the_tuple):
     Output: print info in a table."""
     print("{:12}{}".format("Month","Price"))
     for item in the_tuple:                              # iterate through list and print date and average price
-        print("{:10}{:.2f}".format(item[0], item[1]))
+        if item[1] >= 1000:
+            print("{:10}{:.2f}".format(item[0], item[1]))
+        elif item[1] >= 100:
+            print("{:11}{:.2f}".format(item[0], item[1]))
+        elif item[1] >= 10:
+            print("{:12}{:.2f}".format(item[0], item[1]))
 
 def highest_price(data_list):
     """Input: list containing only necessary data
